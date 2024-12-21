@@ -75,7 +75,10 @@ body {
 
         .thumbnail {
             flex: 0 1 calc(33.333% - 13.333px);
-
+            @media only screen and (max-width: 1016px) {
+                flex: 0 1 calc(100%);
+              }
+              
             text-align: start !important;
             
             img {
