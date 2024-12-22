@@ -173,10 +173,6 @@ h4 {
     .mainBit {
         align-items: flex-start;
     }
-    img {
-        max-width: 100%;
-        height: auto;
-    }
 
     .images, .productBlurb {
         margin-left: 20px;
@@ -184,6 +180,20 @@ h4 {
     }
     .actions, .deliveryBlurb {
         flex: 0 1 calc(50%);
+    }
+
+    .images {
+        overflow: hidden;
+        position: relative;
+
+        &:hover img {
+            transform: scale(2);
+        }
+        img {
+
+            max-width: 100%;
+            height: auto;
+        }
     }
 
     .actions {

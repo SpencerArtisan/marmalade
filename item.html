@@ -2,11 +2,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
 
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskervilley" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css" />
+
 </head>
 
+  
 <body>
     <div id="banner">Free UK delivery on full price orders over £150. Free UK returns.</div>
     <div id="topBar">
@@ -20,9 +21,7 @@
     <div class="item">
         <div class="mainBit">
             <div class="images">
-
                 <img src="thumbnail.jpg" />
-
             </div>
             <div class="actions">
                 <div class="summary">
@@ -66,4 +65,15 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        document.querySelector('.images').addEventListener('mousemove', function(e) {
+            console.log("hello")
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left; // x position within the element
+            const y = e.clientY - rect.top; // y position within the element
+        
+            this.querySelector('img').style.transformOrigin = `${x}px ${y}px`;
+        });
+    </script>
 </body>
