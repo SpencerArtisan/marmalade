@@ -5,14 +5,18 @@
 
 .hr,
 #topBar,
-.header {
+.header,
+.summary {
     border-bottom: 1px solid #ebebeb;
 }
 
 .flow-across,
 #topBar,
 .bar,
-.gallery {
+.gallery,
+.mainBit,
+.images,
+.buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -21,7 +25,9 @@
 
 .flow-down,
 body,
-.thumbnail {
+.thumbnail,
+.actions,
+.summary {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,7 +35,7 @@ body,
 
 body {
     font-family: var(--font-ss);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin: 0px;
     font-weight: 100;
     text-align: center;
@@ -54,7 +60,7 @@ h2 {
 }
 
 #topBar {
-    padding: 10px;
+    padding: 20px;
     font-size: smaller;
     margin-bottom: 24px;
 
@@ -66,16 +72,6 @@ h2 {
     }
 }
 
-/* 
-.item {
-    & .breadcrumb {
-        font-size: smaller;
-        font-weight: 100;
-        text-align: left;
-        justify-self: flex-start;
-    }
-} */
-
 .header p {
     font-family: var(--font-ss);
 }
@@ -84,6 +80,15 @@ h2 {
     font-size: smaller;
     font-weight: 100;
     font-family: var(--font-s);
+}
+
+.itemBreadcrumb {
+    font-size: smaller;
+    font-weight: 100;
+    font-family: var(--font-s);
+    text-align: left;
+    margin-bottom: 24px;
+    margin-left: 20px;
 }
 
 .bar {
@@ -96,7 +101,7 @@ h2 {
     gap: 20px;
     margin: 0px 20px;
     align-items: flex-start;
-    
+
     .thumbnail {
         position: relative;
         flex: 0 1 calc(33.333% - 13.333px);
@@ -154,6 +159,74 @@ h2 {
             right: 10px;
             font-size: 26px;
             pointer-events: none;
+        }
+    }
+}
+
+.item {
+    .mainBit {
+        align-items: flex-start;
+    }
+
+    .images {
+        /* flex: 0 1 calc(30%); */
+    }
+    .actions {
+        flex: 0 1 calc(50% - 20px);
+        margin-left: 20px;
+        justify-content: space-between;
+        align-items: flex-start;
+        font-family: var(--font-s);
+
+        .summary {
+            align-items: flex-start;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-weight: 600;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .returns {
+            font-size: smaller;
+            margin-bottom: 24px;
+        }
+
+        .productInfo {
+            font-size: smaller;
+            font-family: var(--font-ss);
+            text-decoration: underline;
+            text-underline-offset: 8px;
+        }
+
+        .buttons {
+            margin-bottom: 32px;
+
+            a {
+                flex: 0 1 calc(50%);
+                font-family: var(--font-ss);
+                font-size: x-small;
+                text-align: center;
+                display: inline-block;
+                letter-spacing: 2px;
+                padding: 20px 30px;
+                border-radius: 1px;
+                text-transform: uppercase;
+                text-wrap: nowrap;
+            }
+
+            .addToBag {
+                background-color: black;
+                color: white;
+                margin-right: 18px;
+            }
+
+            .saveForLater {
+                border: 1px solid black;
+            }
         }
     }
 }
