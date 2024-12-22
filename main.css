@@ -74,6 +74,7 @@ body {
         margin: 0px 20px;
 
         .thumbnail {
+            position: relative;
             flex: 0 1 calc(33.333% - 13.333px);
             @media only screen and (max-width: 1016px) {
                 flex: 0 1 calc(100%);
@@ -118,6 +119,14 @@ body {
                 background-color: #f6f6f6;
                 padding: 10px 20px;
                 border-radius: 3px;
+            }
+
+            .addToBasket {
+                position: absolute;
+                top: 2px;
+                right: 10px;
+                font-size: 26px;
+                pointer-events: none;
             }
         }
     }
