@@ -1,6 +1,6 @@
 :root {
     --font-ss: Arial, Helvetica, sans-serif;
-    --font-s: 'Playfair Display', serif;
+    --font-s: 'Libre Baskerville', serif;
 }
 
 .hr,
@@ -15,8 +15,8 @@
 .bar,
 .gallery,
 .mainBit,
-.images,
-.buttons {
+.buttons,
+.secondaryBit {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -27,7 +27,8 @@
 body,
 .thumbnail,
 .actions,
-.summary {
+.summary,
+.deliveryBlurb {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,6 +49,11 @@ body {
 
 h2 {
     font-family: var(--font-s);
+}
+
+h4 {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
 }
 
 #banner {
@@ -167,16 +173,25 @@ h2 {
     .mainBit {
         align-items: flex-start;
     }
-
-    .images {
-        /* flex: 0 1 calc(30%); */
+    img {
+        max-width: 100%;
+        height: auto;
     }
+
+    .images, .productBlurb {
+        margin-left: 20px;
+        flex: 0 1 calc(50% - 60px);
+    }
+    .actions, .deliveryBlurb {
+        flex: 0 1 calc(50%);
+    }
+
     .actions {
-        flex: 0 1 calc(50% - 20px);
         margin-left: 20px;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: initial;
         font-family: var(--font-s);
+        font-size: large;
 
         .summary {
             align-items: flex-start;
@@ -185,6 +200,7 @@ h2 {
         }
 
         .description {
+            font-size: larger;
             font-weight: 600;
             text-align: left;
             margin-bottom: 10px;
@@ -193,6 +209,7 @@ h2 {
         .returns {
             font-size: smaller;
             margin-bottom: 24px;
+            align-self: flex-start;
         }
 
         .productInfo {
@@ -200,6 +217,7 @@ h2 {
             font-family: var(--font-ss);
             text-decoration: underline;
             text-underline-offset: 8px;
+            align-self: flex-start;
         }
 
         .buttons {
@@ -226,6 +244,39 @@ h2 {
 
             .saveForLater {
                 border: 1px solid black;
+            }
+        }
+    }
+
+    .secondaryBit {
+        margin-top: 40px;
+        align-items: flex-start;
+        font-family: var(--font-s);
+        line-height: 1.8;
+        text-align: start;
+
+
+        .productBlurb {
+            margin-right: 60px;
+            font-size: larger;
+
+            font-size: medium;
+                margin-top: 30px;
+                font-weight: 100;
+            }
+        }
+
+        .deliveryBlurb {
+            margin-top: 35px;
+            border-left: 1px solid #ebebeb;
+            padding-left: 40px;
+            
+            div {
+                margin-top: 2px;
+                margin-bottom: 2px;
+            }
+            span {
+                font-weight: 100;
             }
         }
     }
