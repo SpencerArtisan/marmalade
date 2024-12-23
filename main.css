@@ -46,6 +46,7 @@ body {
 
 #logo {
     letter-spacing: -1px;
+    cursor: pointer;
 }
 
 h2 {
